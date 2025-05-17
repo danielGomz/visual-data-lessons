@@ -1,0 +1,54 @@
+[project]
+name = "visual-data-lessons"
+version = "0.1.0"
+description = "🎬 The code behind the videos. ✨ Visual lessons in Data Science, Python, and Computer Science — powered by Manim."
+authors = [
+    {name = "Daniel Gomez",email = "13943878-danielGomz@users.noreply.gitlab.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{include = "visual_data_lessons", from = "src"}]
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.10"
+isort = "^6.0.1"
+black = "^25.1.0"
+flake8 = "^7.2.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.black]
+line-length = 99
+target-version = ["py312"]
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | assets
+)/
+'''
+
+[tool.ruff]
+line-length = 99
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = ["E731", "E266", "E501", "C901"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["visual_data_lessons"]
+force-sort-within-sections = true
+
+[tool.flake8]
+ignore = ["E731", "E266", "E501", "C901", "W503"]
+max-line-length = 99
+exclude = [".git", "notebooks", "references", "models", "data"]

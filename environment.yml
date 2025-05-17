@@ -1,0 +1,17 @@
+name: visual-data-lessons
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.12
+  - pip
+  - manim
+  - cairo
+  - ffmpeg
+  - numpy
+  - scipy
+  - pkg-config
+  - setuptools
+  - wheel
+  - poetry
