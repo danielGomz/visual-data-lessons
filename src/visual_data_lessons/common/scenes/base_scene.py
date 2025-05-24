@@ -1,12 +1,17 @@
 import logging
 from pathlib import Path
 
-from manim import Scene, tempconfig
+from manim import Scene, tempconfig, Text
+
+from ..config import DEFAULT_FONT
 
 logging.basicConfig(level=logging.INFO)
 
+Text.set_default(font=DEFAULT_FONT)
+
 
 class BaseScene(Scene):
+    portrait_scale: float = 0.75
 
     def add_safe_sound(self, sound_file, *args, **kwargs):
         """
@@ -86,3 +91,17 @@ class BaseScene(Scene):
 
                 scene = cls()
                 scene.render()
+
+    @classmethod
+    def get_text_size_factor(cls) -> float:
+        """
+        Returns a scale factor for text size based on screen orientation.
+
+        Returns
+        -------
+        float
+            A smaller factor (0.6) for portrait mode, or 1 for landscape mode.
+        """
+        from manim import config
+
+        return cls.portrait_scale if config.pixel_height > config.pixel_width else 1
