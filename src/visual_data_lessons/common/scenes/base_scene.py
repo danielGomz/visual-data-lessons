@@ -1,7 +1,7 @@
 import logging
 from pathlib import Path
 
-from manim import Scene, tempconfig, Text
+from manim import Scene, Text, tempconfig
 
 from ..config import DEFAULT_FONT
 
