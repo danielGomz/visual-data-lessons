@@ -12,7 +12,7 @@ from manim import (
     Write,
 )
 
-from .base_scene import BaseScene
+from visual_data_lessons.common.scenes.base_scene import BaseScene
 
 
 class IntroScene(BaseScene):
