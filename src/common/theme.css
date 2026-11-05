@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "FiraCode";
+  src: url("../../public/assets/fonts/FiraCode/FiraCodeNerdFontMono-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --color-background: #101e36;
+  --color-surface: #172b49;
+  --color-primary: #77bdf2;
+  --color-accent: #38bdf8;
+  --color-text: #f3f6fc;
+  --color-muted: #a7b9d1;
+
+  --font-primary: "FiraCode", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+}

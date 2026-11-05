@@ -1,0 +1,11 @@
+
+node_modules/
+renders/
+out/
+dist/
+build/
+.cache/
+
+pnpm-lock.yaml
+public/assets/fonts/
+public/assets/audio/
